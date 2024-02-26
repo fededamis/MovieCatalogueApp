@@ -1,6 +1,6 @@
-﻿namespace NetCoreAPISample.Models
+﻿namespace NetCoreAPISample.Models.ViewModels
 {
-    public class Customer
+    public class CustomerViewModel
     {
         public int CustomerId { get; set; }
         public string LastName { get; set; }

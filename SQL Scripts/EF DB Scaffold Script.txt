@@ -1,0 +1,8 @@
+dotnet ef dbcontext scaffold 
+"Server=localhost\SQLEXPRESS;Database=DevTest;Trusted_Connection=True;TrustServerCertificate=True" 
+Microsoft.EntityFrameworkCore.SqlServer 
+--context-namespace NetCoreAPISample.Models.DomainModels 
+--context CustomerDbContext
+--output-dir Models\DomainModels 
+--table Customer 
+--force
