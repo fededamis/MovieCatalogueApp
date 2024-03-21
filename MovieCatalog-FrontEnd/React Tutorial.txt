@@ -1,0 +1,9 @@
+CONTINUE EXAMPLE FROM HERE
+https://codesandbox.io/p/sandbox/movie-catalogue-react-fhnmc
+
+https://www.freecodecamp.org/news/react-movie-app-tutorial/
+https://github.com/chrisblakely01/react-movie-app
+https://www.youtube.com/watch?v=jc9_Bqzy2YQ&feature=youtu.be
+
+Bootstrap React Components
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
