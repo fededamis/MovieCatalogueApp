@@ -4,7 +4,7 @@ const moviePosterStyle = {
     borderRadius: "5%",
     maxWidth: "48vh",
     maxHeight: "60vh",
-    width: "auto",
+    width: "inherit",
     height: "auto",
 };
 
