@@ -4,6 +4,7 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
     return {
         backgroundColor: selected ? "#055578" : "#42095e",
         fontWeight: selected ? "bold" : "normal",
+        fontSize: "calc(0.6em + 0.7vw)",
         cursor: "pointer",
         paddingLeft: "0.75em",
         paddingRight: "0.75em",
