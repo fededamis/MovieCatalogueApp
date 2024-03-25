@@ -21,11 +21,8 @@ namespace MovieCatalogueAPI.Controllers
         public List<Movie> GetMovies()
         {
             var connString = _configuration.GetConnectionString("MovieCatalogueDB");
-            using var context = new MovieCatalogueDbContext(connString);
-           
-            //FIX ERROR
+            using var context = new MovieCatalogueDbContext(connString);            
             var movies = context.Movies.ToList();
-
             return movies;            
         }
     }

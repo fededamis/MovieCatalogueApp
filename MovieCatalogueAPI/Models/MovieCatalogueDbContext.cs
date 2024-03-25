@@ -10,7 +10,7 @@ public partial class MovieCatalogueDbContext : DbContext
 
     public MovieCatalogueDbContext(string connectionstring)
     {
-    string _connectionstring;
+        _connectionstring = connectionstring;
     }
 
     public MovieCatalogueDbContext(DbContextOptions<MovieCatalogueDbContext> options)
