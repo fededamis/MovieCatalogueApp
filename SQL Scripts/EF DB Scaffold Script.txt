@@ -6,3 +6,5 @@ Microsoft.EntityFrameworkCore.SqlServer
 --output-dir Models\DomainModels 
 --table Customer 
 --force
+
+CHANGE
