@@ -1,10 +1,7 @@
 dotnet ef dbcontext scaffold 
-"Server=localhost\SQLEXPRESS;Database=DevTest;Trusted_Connection=True;TrustServerCertificate=True" 
-Microsoft.EntityFrameworkCore.SqlServer 
---context-namespace NetCoreAPISample.Models.DomainModels 
---context CustomerDbContext
---output-dir Models\DomainModels 
---table Customer 
---force
-
-CHANGE
+"Host=dpg-co0pn5da73kc73ccqo30-a.oregon-postgres.render.com;Database=movie_catalogue_db;Username=movie_catalogue_db_user;Password=LIr1zyMFpc0haUVI3X3nX2fjackZHAkU" 
+Npgsql.EntityFrameworkCore.PostgreSQL 
+--context-namespace MovieCatalogueAPI.Models 
+--context MovieCatalogueDbContext 
+--output-dir Models 
+--force 
