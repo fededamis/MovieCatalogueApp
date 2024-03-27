@@ -1,5 +1,14 @@
 import { CSSProperties, FC } from "react";
 
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
+import InboxIcon from "@mui/icons-material/Inbox";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
+import { red } from "@mui/material/colors";
+
 const movieItemStyle = (selected?: boolean): CSSProperties => {
     return {
         backgroundColor: selected ? "#055578" : "#42095e",
@@ -13,6 +22,13 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
         color: "#fcfcfc",
     };
 };
+
+const testCSS = (): CSSProperties => {
+    return {
+        
+
+    }
+}
 
 export type MovieItemProps = {
     movieid: string;
@@ -28,12 +44,22 @@ const MovieItem: FC<MovieItemProps> = ({
     onMovieSelected,
 }) => {
     return (
-        <div
-            onClick={() => onMovieSelected && onMovieSelected(movieid)}
-            style={movieItemStyle(selected)}
-        >
-            {title}
-        </div>
+        <>
+            <Divider />
+
+            <ListItemButton
+                onClick={() => onMovieSelected && onMovieSelected(movieid)}
+                selected={selected}
+                sx={{}}
+            >
+                {/* <ListItemIcon>
+                    <StarOutlineRoundedIcon />
+                </ListItemIcon> */}
+
+                <ListItemText primary={title} />
+            </ListItemButton>
+            <Divider />
+        </>
     );
 };
 
