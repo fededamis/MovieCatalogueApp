@@ -42,7 +42,6 @@ const MovieItem: FC<MovieItemProps> = ({
     return (
         <>
             <Divider />
-
             <ListItemButton
                 onClick={() => onMovieSelected && onMovieSelected(movieid)}
                 selected={selected}
@@ -50,7 +49,7 @@ const MovieItem: FC<MovieItemProps> = ({
                     borderTopLeftRadius: "20px",
                     borderTopRightRadius: "20px",
                     borderBottomRightRadius: "20px",
-                    borderBottomLeftRadius: "20px"                    
+                    borderBottomLeftRadius: "20px"                                      
                 }}
             >
                 {/* <ListItemIcon>

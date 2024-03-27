@@ -17,7 +17,7 @@ const HeaderStyle: CSSProperties = {
 const HeaderIconStyle: CSSProperties = {
     fontSize: "2rem",
     paddingLeft: "1rem",
-    color: "cornflowerblue",
+    color: "#8173c9",
 };
 
 const Header: FC = () => {
