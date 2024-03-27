@@ -15,21 +15,21 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
 };
 
 export type MovieItemProps = {
-    id: string;
+    movieid: string;
     title: string;
     selected?: boolean;
     onMovieSelected?: Function;
 };
 
 const MovieItem: FC<MovieItemProps> = ({
-    id,
+    movieid,
     title,
     selected,
     onMovieSelected,
 }) => {
     return (
         <div
-            onClick={() => onMovieSelected && onMovieSelected(id)}
+            onClick={() => onMovieSelected && onMovieSelected(movieid)}
             style={movieItemStyle(selected)}
         >
             {title}

@@ -24,13 +24,13 @@ const MovieList: FC<MovieListProps> = ({
     return (
     <div style={movieListStyles}>
     {        
-        movieItemList.map(({id, title}) => {
+        movieItemList.map(({movieid, title}) => {
             return (
                 <MovieItem
-                key={id}
-                id={id}
+                key={movieid}
+                movieid={movieid}
                 title={title}
-                selected = {id === selectedMovieId}
+                selected = {movieid === selectedMovieId}
                 onMovieSelected={onMovieSelected}
                 />
             )

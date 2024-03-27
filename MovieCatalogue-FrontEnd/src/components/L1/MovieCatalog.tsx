@@ -36,8 +36,8 @@ const movieListWrapperStyle: CSSProperties = {
 type MovieData = {
     title: string;
     year: string;
-    id: string;
-    poster: string;
+    movieid: string;
+    posterurl: string;
     director: string;
     casts: string;
     genre: string;
@@ -50,13 +50,14 @@ type MovieCatalogueProps = {
 const MovieCatalogue: FC<MovieCatalogueProps> = ({ movieListData }) => {
     //React Hook
     const [selectedMovieId, setSelectedMovieId] = useState<string>(
-        movieListData[0].id
+        movieListData.length > 0 ? movieListData[0].movieid : ''
     );
 
     const selectedMovie =
-        movieListData.find((movie) => movie.id === selectedMovieId) ||
+        movieListData.find((movie) => movie.movieid === selectedMovieId) ||
         movieListData[0];
-    const { title, poster, year, director, casts, genre } = selectedMovie;
+
+    const { title, posterurl, year, director, casts, genre } = selectedMovie || '';      
 
     return (
         <div style={movieCatalogueWrapperStyle}>
@@ -64,7 +65,7 @@ const MovieCatalogue: FC<MovieCatalogueProps> = ({ movieListData }) => {
             <div style={moviePreviewWrapperStyle}>
                 <MoviePreview
                     movieTitle={title}
-                    posterUrl={poster}
+                    posterUrl={posterurl}
                     releaseYear={year}
                     director={director}
                     casts={casts}
