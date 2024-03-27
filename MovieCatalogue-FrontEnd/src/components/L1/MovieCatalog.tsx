@@ -21,14 +21,14 @@ const movieSectionWrapperStyle: CSSProperties = {
 
 const moviePreviewWrapperStyle: CSSProperties = {
     ...movieSectionWrapperStyle,
-    flex: "1 1 75%",
+    flex: "1 1 70%",
     textAlign: "center",    
     alignSelf: "flex-start",
 };
 
 const movieListWrapperStyle: CSSProperties = {
     ...movieSectionWrapperStyle,
-    flex: "1 1 25%",
+    flex: "1 1 30%",
     textAlign: "left",
     alignSelf: "flex-end",
 };

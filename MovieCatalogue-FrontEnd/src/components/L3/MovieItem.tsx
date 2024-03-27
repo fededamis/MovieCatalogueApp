@@ -13,7 +13,7 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
         backgroundColor: selected ? "#055578" : "#42095e",
         fontWeight: selected ? "bold" : "normal",
         fontSize: "calc(0.6em + 0.7vw)",
-        cursor: "pointer",
+        // cursor: "pointer",
         paddingLeft: "0.75em",
         paddingRight: "0.75em",
         paddingTop: "0.2em",
@@ -22,8 +22,15 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
     };
 };
 
-const testCSS = (): CSSProperties => {
-    return {};
+const listItemStyle: CSSProperties = {
+    fontSize: "calc(0.6em + 0.7vw)",
+};
+
+const listItemButtonStyle: CSSProperties = {
+    borderTopLeftRadius: "20px",
+    borderTopRightRadius: "20px",
+    borderBottomRightRadius: "20px",
+    borderBottomLeftRadius: "20px",
 };
 
 export type MovieItemProps = {
@@ -44,19 +51,14 @@ const MovieItem: FC<MovieItemProps> = ({
             <Divider />
             <ListItemButton
                 onClick={() => onMovieSelected && onMovieSelected(movieid)}
-                selected={selected}
-                sx={{
-                    borderTopLeftRadius: "20px",
-                    borderTopRightRadius: "20px",
-                    borderBottomRightRadius: "20px",
-                    borderBottomLeftRadius: "20px"                                      
-                }}
+                selected={selected}                
+                style={listItemButtonStyle}
             >
                 {/* <ListItemIcon>
                     <StarOutlineRoundedIcon />
                 </ListItemIcon> */}
 
-                <ListItemText primary={title} />
+                <ListItemText primary={title} style={listItemStyle} />
             </ListItemButton>
             <Divider />
         </>
