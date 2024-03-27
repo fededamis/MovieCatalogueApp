@@ -7,7 +7,6 @@ import Divider from "@mui/material/Divider";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
-import { red } from "@mui/material/colors";
 
 const movieItemStyle = (selected?: boolean): CSSProperties => {
     return {
@@ -24,11 +23,8 @@ const movieItemStyle = (selected?: boolean): CSSProperties => {
 };
 
 const testCSS = (): CSSProperties => {
-    return {
-        
-
-    }
-}
+    return {};
+};
 
 export type MovieItemProps = {
     movieid: string;
@@ -50,7 +46,12 @@ const MovieItem: FC<MovieItemProps> = ({
             <ListItemButton
                 onClick={() => onMovieSelected && onMovieSelected(movieid)}
                 selected={selected}
-                sx={{}}
+                sx={{
+                    borderTopLeftRadius: "20px",
+                    borderTopRightRadius: "20px",
+                    borderBottomRightRadius: "20px",
+                    borderBottomLeftRadius: "20px"                    
+                }}
             >
                 {/* <ListItemIcon>
                     <StarOutlineRoundedIcon />

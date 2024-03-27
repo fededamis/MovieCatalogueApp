@@ -32,7 +32,7 @@ function App() {
         <>
             <Header />            
             {isLoading && <Loader/>}
-            {!isLoading && <MovieCatalogue movieListData={movieData} />}            
+            {!isLoading && <MovieCatalogue movieListData={test_data} />}            
         </>
     );
 }

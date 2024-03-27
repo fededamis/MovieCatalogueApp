@@ -4,13 +4,13 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 
 const movieListStyles: CSSProperties = {
-    // backgroundColor: "#42095e",
+    backgroundColor: "#c2b8f2",
     height: "100%",
     paddingTop: "1em",
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    overflowY:"auto"
+    overflowY: "auto",
 };
 
 type MovieListProps = {
@@ -29,11 +29,18 @@ const MovieList: FC<MovieListProps> = ({
             <Box
                 sx={{
                     width: "100%",
-                    maxWidth: 360,
-                    bgcolor: "background.paper",
+                    bgcolor: "#a396e3",
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                    borderBottomRightRadius: "10px",
+                    borderBottomLeftRadius: "10px",
                 }}
             >
-                <List component="nav" aria-label="main mailbox folders">
+                <List
+                    component="nav"
+                    aria-label="main mailbox folders"
+                    sx={{ paddingTop: "0", paddingBottom: "0" }}
+                >
                     {movieItemList.map(({ movieid, title }) => {
                         return (
                             <MovieItem
