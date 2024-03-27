@@ -3,17 +3,19 @@ import MovieCatalogue from "./components/L1/MovieCatalog";
 import test_data from "./test-json/movie-samples.json";
 import { useState, useEffect } from "react";
 
-function App() {    
-
+function App() {
     const [movieData, setMovieData] = useState([]);
-    const apiUrl = "https://movie-catalogue-api-latest.onrender.com/GetMovies";    
+    const [isLoading, setIsLoading] = useState(false);
+    const apiUrl = "https://movie-catalogue-api-latest.onrender.com/GetMovies";
 
     useEffect(() => {
+        setIsLoading(true);
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
                 setMovieData(data);
+                setIsLoading(false);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -23,7 +25,8 @@ function App() {
     return (
         <>
             <Header />
-            <MovieCatalogue movieListData={movieData} />
+            {isLoading && <p>Data is being loaded..</p>}
+            {!isLoading && <MovieCatalogue movieListData={movieData} />}            
         </>
     );
 }
