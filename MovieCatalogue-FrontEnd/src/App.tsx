@@ -1,5 +1,6 @@
 import Header from "./components/L1/Header";
 import MovieCatalogue from "./components/L1/MovieCatalog";
+import Loader from "./components/L2/Loader";
 import test_data from "./test-json/movie-samples.json";
 import { useState, useEffect } from "react";
 
@@ -24,8 +25,8 @@ function App() {
 
     return (
         <>
-            <Header />
-            {isLoading && <p>Data is being loaded..</p>}
+            <Header />            
+            {isLoading && <Loader/>}
             {!isLoading && <MovieCatalogue movieListData={movieData} />}            
         </>
     );
