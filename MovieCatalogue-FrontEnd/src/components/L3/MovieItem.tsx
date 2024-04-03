@@ -1,30 +1,29 @@
 import { CSSProperties, FC } from "react";
-
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
-import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const movieItemStyle = (selected?: boolean): CSSProperties => {
-    return {
-        backgroundColor: selected ? "#055578" : "#42095e",
-        fontWeight: selected ? "bold" : "normal",
-        fontSize: "calc(0.6em + 0.7vw)",
-        // cursor: "pointer",
-        paddingLeft: "0.75em",
-        paddingRight: "0.75em",
-        paddingTop: "0.2em",
-        paddingBottom: "0.2em",
-        color: "#fcfcfc",
-    };
-};
-
-const listItemStyle: CSSProperties = {
-    fontSize: "calc(0.6em + 0.7vw)",
-};
+const theme = createTheme({
+    components: {
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontSize: "calc(0.6em + 0.5vw)",
+                },
+            },
+        },
+        MuiListItemButton: {
+            styleOverrides: { 
+                root: { 
+                    cursor: "default",
+                    '&.Mui-selected': {backgroundColor:"#8f34eb"},
+                    '&.Mui-selected:hover': {backgroundColor:"#8f34eb"},
+                } 
+            },
+        }        
+    },
+});
 
 const listItemButtonStyle: CSSProperties = {
     borderTopLeftRadius: "20px",
@@ -49,17 +48,15 @@ const MovieItem: FC<MovieItemProps> = ({
     return (
         <>
             <Divider />
-            <ListItemButton
-                onClick={() => onMovieSelected && onMovieSelected(movieid)}
-                selected={selected}                
-                style={listItemButtonStyle}
-            >
-                {/* <ListItemIcon>
-                    <StarOutlineRoundedIcon />
-                </ListItemIcon> */}
-
-                <ListItemText primary={title} style={listItemStyle} />
-            </ListItemButton>
+            <ThemeProvider theme={theme}>
+                <ListItemButton
+                    onClick={() => onMovieSelected && onMovieSelected(movieid)}
+                    selected={selected}
+                    style={listItemButtonStyle}
+                >
+                    <ListItemText primary={title} />
+                </ListItemButton>
+            </ThemeProvider>
             <Divider />
         </>
     );
