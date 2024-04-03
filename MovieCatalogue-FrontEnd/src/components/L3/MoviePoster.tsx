@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const moviePosterStyle = {
     borderRadius: "5%",
-    maxWidth: "48vh",
+    maxWidth: "fit-content",
     maxHeight: "60vh",
     width: "inherit",
     height: "auto",
