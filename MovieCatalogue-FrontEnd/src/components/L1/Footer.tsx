@@ -1,14 +1,17 @@
 import { CSSProperties, FC } from "react";
 
 const FooterStyle: CSSProperties = {
-    backgroundColor: "rgb(32, 35, 42)",
-    marginBlockEnd: 0,
-    height: "4vh"
+    backgroundColor: "rgb(32, 35, 42)",    
+    height: "6vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
 };
 
 const FooterTextStyle: CSSProperties = {
     color: "white",
-    textAlign: "center",
+    textAlign: "center",    
+    marginBottom: "0.5vh",
     fontSize: "calc(0.6em + 0.5vw)",
 };
 
