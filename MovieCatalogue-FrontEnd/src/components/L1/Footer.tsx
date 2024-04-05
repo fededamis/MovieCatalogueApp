@@ -2,6 +2,7 @@ import { CSSProperties, FC } from "react";
 
 const FooterStyle: CSSProperties = {
     backgroundColor: "rgb(32, 35, 42)",
+    marginBlockEnd: 0
 };
 
 const FooterTextStyle: CSSProperties = {
