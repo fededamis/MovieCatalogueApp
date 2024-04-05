@@ -5,10 +5,10 @@ import Footer from "./components/L1/Footer";
 import test_data from "./test-json/movie-samples.json";
 import { useState, useEffect } from "react";
 
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 function App() {
     const [movieData, setMovieData] = useState([]);
@@ -29,14 +29,22 @@ function App() {
             });
     }, []);
 
-    return (
-        <>
-            <Header />            
-            {isLoading && <Loader/>}
-            {!isLoading && <MovieCatalogue movieListData={movieData} />}     
-            <Footer/>       
-        </>
-    );
+    if (isLoading) {
+        return (
+            <>
+                <Header />
+                <Loader />
+            </>
+        );
+    } else {
+        return (
+            <>
+                <Header />
+                <MovieCatalogue movieListData={movieData} />
+                <Footer />
+            </>
+        );
+    }
 }
 
 export default App;
