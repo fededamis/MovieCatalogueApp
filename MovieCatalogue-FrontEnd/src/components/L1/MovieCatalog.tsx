@@ -13,7 +13,7 @@ const movieCatalogueWrapperStyle: CSSProperties = {
 };
 
 const movieSectionWrapperStyle: CSSProperties = {    
-    height: "calc(100vh - 60px)",
+    height: "calc(96vh - 60px)",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
